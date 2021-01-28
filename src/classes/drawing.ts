@@ -1,13 +1,9 @@
-import { Rectangle } from './rectangle';
-import { Circle } from './circle';
-import { Line } from './line';
+import Shape from "./shape";
 
 export class Drawing {
     private canvas: HTMLCanvasElement;
     private context: CanvasRenderingContext2D;
-    private rect:Rectangle;
-    private circle:Circle;
-    private line: Line;
+    private shapes: Shape[]= []
     
     constructor(canvasID:string) {
         this.canvas = document.getElementById(canvasID) as
@@ -17,15 +13,18 @@ export class Drawing {
             throw new Error("your browser does not support drawing")
         }
         this.context = context;
-        this.rect = new Rectangle(this.context, 10,10,250,50)
-        this.circle = new Circle(this.context, 100, 200, 70)
-        this.line = new Line(this.context,30,50, 30, 200 )
     }
     
     public draw(){
-        this.rect.draw()
-        this.circle.draw();
-        this.line.draw();
+        for(let shape of this.shapes)
+        {
+            shape.draw(this.context)
+        }
+    }
+    
+    public addShape(shape:Shape)
+    {
+        this.shapes.push(shape);
     }
     
 }

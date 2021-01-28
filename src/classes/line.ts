@@ -1,20 +1,23 @@
-export class Line{
+import Shape from "./shape"
+
+export class Line extends Shape{
     
     constructor(
-        private ctx:CanvasRenderingContext2D,
         public x1:number=0,
         public y1:number=0,
         public x2:number=0,
         public y2:number=0,
-        public stroke:string="#999"){}
+        public stroke:string="#999"){
+            super()
+        }
     
-        public draw()
+        public draw(ctx:CanvasRenderingContext2D)
         {
-            this.ctx.beginPath();
-            this.ctx.strokeStyle = this.stroke
-            this.ctx.moveTo(this.x1,this.y1)
-            this.ctx.lineTo(this.x2,this.y2)
-            this.ctx.stroke();
+            ctx.beginPath();
+            ctx.strokeStyle = this.stroke
+            ctx.moveTo(this.x1,this.y1)
+            ctx.lineTo(this.x2,this.y2)
+            ctx.stroke();
         }
 
 }
