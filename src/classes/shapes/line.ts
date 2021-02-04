@@ -1,4 +1,4 @@
-import Shape from "./shape"
+import {Shape} from "./shape"
 
 export class Line extends Shape{
     
@@ -19,5 +19,8 @@ export class Line extends Shape{
             ctx.lineTo(this.x2,this.y2)
             ctx.stroke();
         }
-
+        public area()
+        {
+            return 0;
+        }
 }

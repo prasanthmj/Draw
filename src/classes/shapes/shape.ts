@@ -1,6 +1,7 @@
 
 
-export default abstract class Shape
+export abstract class Shape
 {
     abstract draw(ctx:CanvasRenderingContext2D):void;
+    abstract area():number;
 }

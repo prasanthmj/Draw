@@ -1,7 +1,7 @@
 import { Drawing } from './classes/drawing';
-import { Rectangle } from './classes/rectangle';
-import { Line } from './classes/line';
-import { Circle } from './classes/circle';
+import { Rectangle } from './classes/shapes/rectangle';
+import { Line } from './classes/shapes/line';
+import { Circle } from './classes/shapes/circle';
 
 
 let d = new Drawing('canvas');

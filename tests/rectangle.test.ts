@@ -1,12 +1,12 @@
 import {  serialize, plainToClass, deserialize } from 'class-transformer';
-import { Rectangle } from '../src/classes/rectangle';
+import { Rectangle } from '../src/classes/shapes/rectangle';
 
 test("R1: deserialize rectangle from string to a instance", ()=>{
-    const str = '{"x":10,"y":20,"width":100,"height":110,"stroke":"#999"}'
+    const str = '{"x":10,"y":20,"width":100,"height":110}'
     const rect = deserialize(Rectangle, str)
     expect(rect.area()).toBe(11000)
     expect(rect.hitTest(20,30)).toBe(true)
-    expect(rect.hitTest(19,30)).toBe(false)
+    expect(rect.hitTest(20,19)).toBe(false)
     console.log("rectangle ", rect)
 })
 

@@ -14,7 +14,7 @@
         "sourceMap": true,
         "inlineSources": true,
         "experimentalDecorators":true,
-        "rootDir": "./src",
+        "rootDir": ".",
         "types": ["node","jest"],
         "strict": true,
         "noUnusedParameters": true,
